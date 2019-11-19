@@ -53,5 +53,19 @@
               "defaults" : 8},
               {"param_name" : "fill_value",
               "type" : "rgb"}
-            ]
+            ],
+    "RandomSnow": [{"param_name" : "snow_point_lower",
+                  "type" : "int_interval",
+                  "limits_list" : [0.0, 1.0],
+                  "defaults" : 0.1},
+                   {"param_name" : "snow_point_upper",
+                  "type" : "int_interval",
+                  "limits_list" : [0.0, 1.0],
+                  "defaults" : 0.1},
+                 {"param_name" : "brightness_coeff",
+                  "type" : "int_interval",
+                  "limits_list" : [0.9, 20.0],
+                  "defaults" : 2.5}
+                ]
+
 }
