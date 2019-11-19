@@ -63,5 +63,3 @@ st.subheader('Credentials:')
 st.text('Source: https://github.com/IliaLarchenko/albumentations-demo')
 st.text('Albumentation library: https://github.com/albumentations-team/albumentations')
 st.text('Image Source: https://www.pexels.com/royalty-free-images/')
-
-
