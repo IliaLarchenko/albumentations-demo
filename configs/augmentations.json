@@ -1,9 +1,21 @@
 {
     "ToGray": [],
     "ToSepia": [],
-    "Blur": [{"name" : "blur_limit",
+    "ChannelShuffle": [],
+    "InvertImg": [],
+    "Blur": [{"param_name" : "blur_limit",
               "type" : "int_interval",
-              "limits" : [3, 100],
-              "defaults" : [3, 7]}
+              "limits_list" : [3, 100],
+              "defaults_list" : [3, 7]}
+            ],
+    "CLAHE": [{"param_name" : "clip_limit",
+              "type" : "int_interval",
+              "limits_list" : [1, 100],
+              "defaults_list" : [1, 4]},
+              {"param_name" : "tile_grid_size",
+              "type" : "several_ints",
+              "subparam_names": ["y", "x"],
+              "limits_list" : [[1, 100],[1, 100]],
+              "defaults_list" : [8, 8]}
             ]
 }

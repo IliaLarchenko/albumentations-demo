@@ -8,25 +8,14 @@ import json
 import albumentations as A
 import streamlit as st
 
+from control import *
+
 
 def load_image(image_name, path_to_folder = '../images'):
     path_to_image = os.path.join(path_to_folder, image_name)
     image = cv2.imread(path_to_image)
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     return image
-
-
-def show_int_interval(name, limits, defaults, **kwargs):
-    min_max_interval = st.sidebar.slider(name, limits[0], limits[1], defaults)
-    return min_max_interval
-
-
-
-# dict from param name to function showing this param
-param2func = {
-    'int_interval': show_int_interval
-}
-
 
 
 st.title('Demo of Albumentations transforms')
@@ -55,7 +44,7 @@ else:
         param['value'] = param2func[param['type']](**param)
         
         
-params_string = ','.join([param['name'] + '=' + str(param['value']) for param in transform_params] + ['p=1.0'])
+params_string = ','.join([param['param_name'] + '=' + str(param['value']) for param in transform_params] + ['p=1.0'])
 params_string = '(' + params_string + ')'
 
 st.text('Press R to update')
@@ -63,4 +52,16 @@ exec('transform = A.' + transform_name + params_string)
 st.image([image, transform(image = image)['image']], 
          caption = ['Original image', 'Transformed image'],
          width = 320)
+
+st.subheader('Docstring:')
 st.text(str(transform.__doc__))
+
+
+st.text('')
+st.text('')
+st.subheader('Credentials:')
+st.text('Source: https://github.com/IliaLarchenko/albumentations-demo')
+st.text('Albumentation library: https://github.com/albumentations-team/albumentations')
+st.text('Image Source: https://www.pexels.com/royalty-free-images/')
+
+
