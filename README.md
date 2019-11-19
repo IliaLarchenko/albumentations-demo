@@ -21,7 +21,7 @@ And then just follow the address you see in console. You shoud see something sim
 ![screenshot](docs/readme.jpg?raw=true)
 
 
+## Online playground:
 You can also play with the current deployed version:
 [https://albumentations-demo.herokuapp.com/](https://albumentations-demo.herokuapp.com/)
-
-But it can work 
+It is delpoyes on free service with very limited computing power and can be quite instable.
