@@ -14,3 +14,5 @@ streamlit run src/main.py
 ```
 
 And then just follow the address you see in console.
+
+![screenshot](docs/readme.jpg?raw=true)
