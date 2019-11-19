@@ -25,11 +25,19 @@ def select_several_RGB(param_name, **kwargs):
     return tuple(result)
 
 
-
 def select_radio(param_name, options_list, **kwargs):
     st.sidebar.subheader(param_name)
     result = st.sidebar.radio('', options_list)
+    if isinstance(options_list[0],str):
+        result = '"' + result + '"'
     return result
+
+
+def select_checkbox(param_name, defaults, **kwargs):
+    st.sidebar.subheader(param_name)
+    result = st.sidebar.checkbox("True", defaults)
+    return result
+
 
 
 # dict from param name to function showing this param
@@ -37,6 +45,7 @@ param2func = {
     'int_interval': select_int_interval,
     'several_ints': select_several_ints,
     'radio': select_radio,
-    'rgb': select_several_RGB
+    'rgb': select_several_RGB,
+    'checkbox': select_checkbox
 
 }

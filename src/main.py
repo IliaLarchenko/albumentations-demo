@@ -32,7 +32,7 @@ image = load_image(image_name, path_to_images)
 path_to_config = 'configs/augmentations.json'
 with open(path_to_config, 'r') as config_file:
     augmentations = json.load(config_file)
-transform_name = st.sidebar.selectbox('Select a transformation:', list(augmentations.keys()))
+transform_name = st.sidebar.selectbox('Select a transformation:', sorted(list(augmentations.keys())))
 transform_params = augmentations[transform_name]
 
 
@@ -44,9 +44,10 @@ else:
         param['value'] = param2func[param['type']](**param)
         
         
-params_string = ','.join([param['param_name'] + '=' + str(param['value']) for param in transform_params] + ['p=1.0'])
+params_string = ", ".join([param['param_name'] + '=' + str(param['value']) for param in transform_params] + ['p=1.0'])
 params_string = '(' + params_string + ')'
 
+st.text(transform_name + params_string)
 st.text('Press R to update')
 exec('transform = A.' + transform_name + params_string)
 st.image([image, transform(image = image)['image']], 
