@@ -1,6 +1,6 @@
 # albumentations-demo
 
-This service is created to demotstrate abilities of the Albumentation - library for efficent image augmentations.
+This service is created to demotstrate abilities of the Albumentation - a library for efficent image augmentations.
 
 
 ## It is currently ALPHA VERSION
