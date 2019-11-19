@@ -1,0 +1,9 @@
+{
+    "ToGray": [],
+    "ToSepia": [],
+    "Blur": [{"name" : "blur_limit",
+              "type" : "int_interval",
+              "limits" : [3, 100],
+              "defaults" : [3, 7]}
+            ]
+}
