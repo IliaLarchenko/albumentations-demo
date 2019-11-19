@@ -1,0 +1,6 @@
+albumentations==0.4.3
+streamlit==0.50.2
+numpy==1.16.4
+opencv-python-headless==4.1.1.26
+json5==0.8.4
+jsonschema==3.0.1
