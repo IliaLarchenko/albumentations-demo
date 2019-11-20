@@ -1,10 +1,9 @@
 import streamlit as st
 import albumentations as A
 
-from control import *
 from utils import (
     load_augmentations_config,
-    generate_executable_string,
+    get_params_string
 )
 from visuals import (
     show_transform_control,
@@ -14,8 +13,10 @@ from visuals import (
 )
 
 
-# main
+# show title
 st.title("Demo of Albumentations transforms")
+
+# select image
 image = select_image(path_to_images="images")
 
 # load the config
@@ -30,13 +31,14 @@ transform_name = st.sidebar.selectbox(
 param_values = show_transform_control(augmentations[transform_name])
 
 # apply the transformation to the image
-executable_string = generate_executable_string(transform_name, param_values)
-st.text(executable_string)
-exec("transform = A." + executable_string)
+transform = getattr(A, transform_name)(**param_values)
 augmented_image = transform(image=image)["image"]
 
-# show the images
+# show the params passed
+st.text("Params passed:" + get_params_string(param_values))
 st.text("Press R to update")
+
+# show the images
 st.image(
     [image, augmented_image],
     caption=["Original image", "Transformed image"],
