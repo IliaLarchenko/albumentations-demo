@@ -27,14 +27,14 @@ def show_transform_control(transform_params: dict):
 
 
 def show_credentials():
-    st.text("")
-    st.text("")
+    st.markdown("* * *")
     st.subheader("Credentials:")
-    st.text("Source: github.com/IliaLarchenko/albumentations-demo")
-    st.text("Albumentations library: github.com/albumentations-team/albumentations")
-    st.text("Image Source: pexels.com/royalty-free-images/")
+    st.markdown("Source: [github.com/IliaLarchenko/albumentations-demo](https://github.com/IliaLarchenko/albumentations-demo)")
+    st.markdown("Albumentations library: [github.com/albumentations-team/albumentations](https://github.com/albumentations-team/albumentations)")
+    st.markdown("Image Source: [pexels.com/royalty-free-images](https://pexels.com/royalty-free-images/)")
 
 
 def show_docstring(obj_with_ds):
+    st.markdown("* * *")
     st.subheader("Docstring:")
-    st.text(str(obj_with_ds.__doc__))
+    st.text(obj_with_ds.__doc__)

@@ -35,16 +35,18 @@ transform = getattr(A, transform_name)(**param_values)
 augmented_image = transform(image=image)["image"]
 
 # show the params passed
-st.text("Params passed: " + get_params_string(param_values))
-st.text("Press R to update")
+# st.text("Params passed: ")
+# st.code(get_params_string(param_values))
+# st.text("Press R to update")
 
 # show the images
 st.image(
     [image, augmented_image],
     caption=["Original image", "Transformed image"],
-    width=320,
+    width=335,
 )
 
 # print additional info
+st.code(str(transform))
 show_docstring(transform)
 show_credentials()
