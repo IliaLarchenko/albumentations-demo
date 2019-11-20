@@ -11,8 +11,8 @@
       "param_name": "grid",
       "type": "several_ints",
       "subparam_names": [
-        "y",
-        "x"
+        "height",
+        "width"
       ],
       "limits_list": [
         [
@@ -264,8 +264,8 @@
       "param_name": "tile_grid_size",
       "type": "several_ints",
       "subparam_names": [
-        "y",
-        "x"
+        "height",
+        "width"
       ],
       "limits_list": [
         [
