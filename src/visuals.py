@@ -16,7 +16,7 @@ def select_image(path_to_images: str = "images"):
 
 
 def show_transform_control(transform_params: dict):
-    param_values = {'p': 1.0}
+    param_values = {"p": 1.0}
     if len(transform_params) == 0:
         st.sidebar.text("Transform has no parameters")
     else:
@@ -29,9 +29,15 @@ def show_transform_control(transform_params: dict):
 def show_credentials():
     st.markdown("* * *")
     st.subheader("Credentials:")
-    st.markdown("Source: [github.com/IliaLarchenko/albumentations-demo](https://github.com/IliaLarchenko/albumentations-demo)")
-    st.markdown("Albumentations library: [github.com/albumentations-team/albumentations](https://github.com/albumentations-team/albumentations)")
-    st.markdown("Image Source: [pexels.com/royalty-free-images](https://pexels.com/royalty-free-images/)")
+    st.markdown(
+        "Source: [github.com/IliaLarchenko/albumentations-demo](https://github.com/IliaLarchenko/albumentations-demo)"
+    )
+    st.markdown(
+        "Albumentations library: [github.com/albumentations-team/albumentations](https://github.com/albumentations-team/albumentations)"
+    )
+    st.markdown(
+        "Image Source: [pexels.com/royalty-free-images](https://pexels.com/royalty-free-images/)"
+    )
 
 
 def show_docstring(obj_with_ds):
