@@ -16,7 +16,7 @@ def select_image(path_to_images: str = "images"):
 
 
 def show_transform_control(transform_params: dict):
-    param_values = {}
+    param_values = {'p': 1.0}
     if len(transform_params) == 0:
         st.sidebar.text("Transform has no parameters")
     else:

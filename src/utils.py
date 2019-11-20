@@ -35,6 +35,6 @@ def load_augmentations_config(
 
 def get_params_string(param_values: dict) -> str:
     params_string = ", ".join(
-        [k + "=" + str(param_values[k]) for k in param_values.keys()] + ["p=1.0"]
+        [k + "=" + str(param_values[k]) for k in param_values.keys()]
     )
     return params_string

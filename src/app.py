@@ -35,7 +35,7 @@ transform = getattr(A, transform_name)(**param_values)
 augmented_image = transform(image=image)["image"]
 
 # show the params passed
-st.text("Params passed:" + get_params_string(param_values))
+st.text("Params passed: " + get_params_string(param_values))
 st.text("Press R to update")
 
 # show the images
