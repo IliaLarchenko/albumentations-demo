@@ -39,8 +39,6 @@ def select_several_RGB(param_name, **kwargs):
 def select_radio(param_name, options_list, **kwargs):
     st.sidebar.subheader(param_name)
     result = st.sidebar.radio("", options_list)
-    if isinstance(options_list[0], str):
-        result = '"' + result + '"'
     return result
 
 
