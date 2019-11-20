@@ -16,7 +16,7 @@ pip install -r requirements.txt
 streamlit run src/main.py
 ```
 
-And then just follow the address you see in console. You shoud see something similar to this:
+And then just follow the address you see in console. You should see something similar to this:
 
 ![screenshot](docs/readme.jpg?raw=true)
 
@@ -24,4 +24,4 @@ And then just follow the address you see in console. You shoud see something sim
 ## Online playground:
 You can also play with the current deployed version:
 [https://albumentations-demo.herokuapp.com/](https://albumentations-demo.herokuapp.com/)
-It is delpoyed on free service with very limited computing power and can be quite unstable.
+It is deployed on free service with very limited computing power and can be quite unstable.
