@@ -30,7 +30,7 @@ def select_several_ints(
 
 def select_min_max(param_name, limits_list, defaults_list, **kwargs):
     assert len(param_name) == 2
-    return select_int_interval(' and '.join(param_name), limits_list, defaults_list)
+    return select_int_interval(' & '.join(param_name), limits_list, defaults_list)
 
 
 def select_RGB(param_name, **kwargs):

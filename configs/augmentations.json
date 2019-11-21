@@ -202,40 +202,43 @@
   ],
   "JpegCompression": [
     {
-      "param_name": ["quality_lower","quality_upper"],
+      "param_name": [
+        "quality_lower",
+        "quality_upper"
+      ],
       "type": "min_max",
       "limits_list": [
         0,
         100
       ],
-      "defaults_list": [80,100]
+      "defaults_list": [
+        80,
+        100
+      ]
     }
   ],
   "ImageCompression": [
-    {
-      "param_name": "quality_lower",
-      "type": "int_interval",
-      "limits_list": [
-        0,
-        100
-      ],
-      "defaults": 99
-    },
-    {
-      "param_name": "quality_upper",
-      "type": "int_interval",
-      "limits_list": [
-        0,
-        100
-      ],
-      "defaults": 100
-    },
     {
       "param_name": "compression_type",
       "type": "radio",
       "options_list": [
         0,
         1
+      ]
+    },
+    {
+      "param_name": [
+        "quality_lower",
+        "quality_upper"
+      ],
+      "type": "min_max",
+      "limits_list": [
+        0,
+        100
+      ],
+      "defaults_list": [
+        80,
+        100
       ]
     }
   ],
@@ -310,51 +313,51 @@
   ],
   "RandomSnow": [
     {
-      "param_name": "snow_point_lower",
-      "type": "int_interval",
+      "param_name": [
+        "snow_point_lower",
+        "snow_point_upper"
+      ],
+      "type": "min_max",
       "limits_list": [
         0.0,
         1.0
       ],
-      "defaults": 0.1
+      "defaults_list": [
+        0.1,
+        0.2
+      ]
     },
     {
-      "param_name": "snow_point_upper",
-      "type": "int_interval",
-      "limits_list": [
-        0.0,
-        1.0
+      "param_name": [
+        "brightness_lower",
+        "brightness_upper"
       ],
-      "defaults": 0.1
-    },
-    {
-      "param_name": "brightness_coeff",
-      "type": "int_interval",
+      "type": "min_max",
       "limits_list": [
         0.0,
         20.0
       ],
-      "defaults": 2.5
+      "defaults_list": [
+        2.5,
+        3.5
+      ]
     }
   ],
   "RandomFog": [
     {
-      "param_name": "fog_coef_lower",
-      "type": "int_interval",
+      "param_name": [
+        "fog_coef_lower",
+        "fog_coef_upper"
+      ],
+      "type": "min_max",
       "limits_list": [
         0.0,
         1.0
       ],
-      "defaults": 0.1
-    },
-    {
-      "param_name": "fog_coef_upper",
-      "type": "int_interval",
-      "limits_list": [
-        0.0,
-        1.0
-      ],
-      "defaults": 0.1
+      "defaults_list": [
+        0.1,
+        0.2
+      ]
     },
     {
       "param_name": "alpha_coef",
@@ -413,24 +416,30 @@
       "param_name": "by_channels",
       "type": "checkbox",
       "defaults": 1
-    }],
-    "CenterCrop" :
-    [
-      {
-        "param_name": "height",
-        "type": "int_interval",
-        "placeholder": {
-          "limits_list" : [1, "image_height"],
-          "defaults" : "image_half_height"
-        }
-      },
-      {
-        "param_name": "width",
-        "type": "int_interval",
-        "placeholder": {
-          "limits_list" : [1, "image_width"],
-          "defaults" : "image_half_width"
-        }
-      }
-    ]
     }
+  ],
+  "CenterCrop": [
+    {
+      "param_name": "height",
+      "type": "int_interval",
+      "placeholder": {
+        "limits_list": [
+          1,
+          "image_height"
+        ],
+        "defaults": "image_half_height"
+      }
+    },
+    {
+      "param_name": "width",
+      "type": "int_interval",
+      "placeholder": {
+        "limits_list": [
+          1,
+          "image_width"
+        ],
+        "defaults": "image_half_width"
+      }
+    }
+  ]
+}
