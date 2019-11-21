@@ -28,9 +28,18 @@ def select_several_ints(
     return tuple(result)
 
 
-def select_min_max(param_name, limits_list, defaults_list, **kwargs):
+def select_min_max(param_name, limits_list, defaults_list, min_diff=0, **kwargs):
     assert len(param_name) == 2
-    return select_int_interval(' & '.join(param_name), limits_list, defaults_list)
+    result = list(select_int_interval(" & ".join(param_name), limits_list, defaults_list))
+    if result[1] - result[0] < min_diff:
+        diff = min_diff - result[1] + result[0]
+        if result[1] + diff <= limits_list[1]:
+            result[1] = result[1] + diff
+        elif result[0] - diff >= limits_list[0]:
+            result[0] = result[0] - diff
+        else:
+            result = limits_list
+    return tuple(result)
 
 
 def select_RGB(param_name, **kwargs):

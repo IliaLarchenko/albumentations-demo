@@ -441,5 +441,43 @@
         "defaults": "image_half_width"
       }
     }
+  ],
+  "Crop": [
+    {
+      "param_name": [
+        "x_min",
+        "x_max"
+      ],
+      "type": "min_max",
+      "placeholder": {
+        "limits_list": [
+          0,
+          "image_width"
+        ],
+        "defaults_list": [
+          0,
+          "image_half_width"
+        ]
+      },
+      "min_diff" : 1
+    },
+    {
+      "param_name": [
+        "y_min",
+        "y_max"
+      ],
+      "type": "min_max",
+      "placeholder": {
+        "limits_list": [
+          0,
+          "image_height"
+        ],
+        "defaults_list": [
+          0,
+          "image_half_height"
+        ]
+      },
+      "min_diff" : 1
+    }
   ]
 }
