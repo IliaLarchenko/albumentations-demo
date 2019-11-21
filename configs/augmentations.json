@@ -328,20 +328,15 @@
       ]
     },
     {
-      "param_name": [
-        "brightness_lower",
-        "brightness_upper"
-      ],
-      "type": "min_max",
+      "param_name": "brightness_coeff",
+      "type": "int_interval",
       "limits_list": [
         0.0,
-        20.0
+        5.0
       ],
-      "defaults_list": [
-        2.5,
-        3.5
-      ]
+      "defaults": 2.5
     }
+
   ],
   "RandomFog": [
     {
