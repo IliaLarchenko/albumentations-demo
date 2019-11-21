@@ -32,7 +32,6 @@ transform_name = st.sidebar.selectbox(
     "Select a transformation:", sorted(list(augmentations.keys()))
 )
 
-
 # select the params values
 param_values = show_transform_control(augmentations[transform_name])
 
