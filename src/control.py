@@ -26,7 +26,7 @@ def select_several_ints(
     return tuple(result)
 
 
-def select_several_RGB(param_name, **kwargs):
+def select_RGB(param_name, **kwargs):
     result = select_several_ints(
         param_name,
         subparam_names=["Red", "Green", "Blue"],
@@ -53,6 +53,6 @@ param2func = {
     "int_interval": select_int_interval,
     "several_ints": select_several_ints,
     "radio": select_radio,
-    "rgb": select_several_RGB,
+    "rgb": select_RGB,
     "checkbox": select_checkbox,
 }

@@ -6,6 +6,7 @@
   "VerticalFlip": [],
   "HorizontalFlip": [],
   "Flip": [],
+  "Transpose": [],
   "RandomGridShuffle": [
     {
       "param_name": "grid",
@@ -421,6 +422,24 @@
       "param_name": "by_channels",
       "type": "checkbox",
       "defaults": 1
+    }],
+    "CenterCrop" :
+    [
+      {
+        "param_name": "height",
+        "type": "int_interval",
+        "placeholder": {
+          "limits_list" : [1, "image_height"],
+          "defaults" : "image_half_height"
+        }
+      },
+      {
+        "param_name": "width",
+        "type": "int_interval",
+        "placeholder": {
+          "limits_list" : [1, "image_width"],
+          "defaults" : "image_half_width"
+        }
+      }
+    ]
     }
-  ]
-}
