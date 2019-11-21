@@ -30,7 +30,9 @@ def select_several_ints(
 
 def select_min_max(param_name, limits_list, defaults_list, min_diff=0, **kwargs):
     assert len(param_name) == 2
-    result = list(select_int_interval(" & ".join(param_name), limits_list, defaults_list))
+    result = list(
+        select_int_interval(" & ".join(param_name), limits_list, defaults_list)
+    )
     if result[1] - result[0] < min_diff:
         diff = min_diff - result[1] + result[0]
         if result[1] + diff <= limits_list[1]:
