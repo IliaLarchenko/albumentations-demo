@@ -459,7 +459,7 @@
           "image_half_width"
         ]
       },
-      "min_diff" : 1
+      "min_diff": 1
     },
     {
       "param_name": [
@@ -477,7 +477,7 @@
           "image_half_height"
         ]
       },
-      "min_diff" : 1
+      "min_diff": 1
     }
   ],
   "RandomScale": [
@@ -485,14 +485,14 @@
       "param_name": "scale_limit",
       "type": "int_interval",
       "limits_list": [
-          -0.9,
-          2.0
-        ],
-        "defaults": [
-          -0.1,
-          0.1
-        ]
-      },
+        -0.9,
+        2.0
+      ],
+      "defaults": [
+        -0.1,
+        0.1
+      ]
+    },
     {
       "param_name": "interpolation",
       "type": "radio",
