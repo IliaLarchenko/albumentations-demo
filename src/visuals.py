@@ -22,7 +22,12 @@ def show_transform_control(transform_params: dict):
     else:
         for param in transform_params:
             control_function = param2func[param["type"]]
-            param_values[param["param_name"]] = control_function(**param)
+            if isinstance(param["param_name"], list):
+                returned_values = control_function(**param)
+                for name, value in zip(param["param_name"], returned_values):
+                    param_values[name] = value
+            else:
+                param_values[param["param_name"]] = control_function(**param)
     return param_values
 
 

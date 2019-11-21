@@ -202,22 +202,13 @@
   ],
   "JpegCompression": [
     {
-      "param_name": "quality_lower",
-      "type": "int_interval",
+      "param_name": ["quality_lower","quality_upper"],
+      "type": "min_max",
       "limits_list": [
         0,
         100
       ],
-      "defaults": 99
-    },
-    {
-      "param_name": "quality_upper",
-      "type": "int_interval",
-      "limits_list": [
-        0,
-        100
-      ],
-      "defaults": 100
+      "defaults_list": [80,100]
     }
   ],
   "ImageCompression": [

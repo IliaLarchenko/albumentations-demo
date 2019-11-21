@@ -1,5 +1,7 @@
 import streamlit as st
 
+# TODO: rename everything
+
 
 def select_int_interval(param_name, limits_list, defaults, **kwargs):
     st.sidebar.subheader(param_name)
@@ -24,6 +26,11 @@ def select_several_ints(
             )
         )
     return tuple(result)
+
+
+def select_min_max(param_name, limits_list, defaults_list, **kwargs):
+    assert len(param_name) == 2
+    return select_int_interval(' and '.join(param_name), limits_list, defaults_list)
 
 
 def select_RGB(param_name, **kwargs):
@@ -55,4 +62,5 @@ param2func = {
     "radio": select_radio,
     "rgb": select_RGB,
     "checkbox": select_checkbox,
+    "min_max": select_min_max,
 }
