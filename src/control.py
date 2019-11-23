@@ -1,9 +1,9 @@
 import streamlit as st
 
-# TODO: rename everything
+# TODO: rename and refactor everything
 
 
-def select_int_interval(param_name, limits_list, defaults, **kwargs):
+def select_int_interval(param_name: str, limits_list: list, defaults, **kwargs):
     st.sidebar.subheader(param_name)
     min_max_interval = st.sidebar.slider(
         "", limits_list[0], limits_list[1], defaults, key=hash(param_name)
