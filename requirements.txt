@@ -23,7 +23,6 @@ flake8==3.7.9
 future==0.18.2
 identify==1.4.7
 idna==2.8
-imageio==2.6.1
 imgaug==0.2.6
 importlib-metadata==0.23
 Jinja2==2.10.3
