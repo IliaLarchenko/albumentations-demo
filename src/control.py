@@ -31,7 +31,7 @@ def select_several_nums(
 def select_min_max(param_name, limits_list, defaults_list, min_diff=0, **kwargs):
     assert len(param_name) == 2
     result = list(
-        select_int_interval(" & ".join(param_name), limits_list, defaults_list)
+        select_num_interval(" & ".join(param_name), limits_list, defaults_list)
     )
     if result[1] - result[0] < min_diff:
         diff = min_diff - result[1] + result[0]
@@ -54,10 +54,17 @@ def select_RGB(param_name, **kwargs):
     return tuple(result)
 
 
+def replace_none(string):
+    if string == "None":
+        return None
+    else:
+        return string
+
+
 def select_radio(param_name, options_list, **kwargs):
     st.sidebar.subheader(param_name)
     result = st.sidebar.radio("", options_list)
-    return result
+    return replace_none(result)
 
 
 def select_checkbox(param_name, defaults, **kwargs):

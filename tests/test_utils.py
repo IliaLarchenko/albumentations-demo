@@ -36,8 +36,20 @@ def test_load_augmentations_config():
     )
 
     for transform_name in augmentations.keys():
-        if transform_name in ["CenterCrop", "RandomCrop"]:
+        if transform_name in [
+            "CenterCrop",
+            "RandomCrop",
+            "RandomResizedCrop",
+            "Resize",
+        ]:
             param_values = {"p": 1.0, "height": 10, "width": 10}
+        elif transform_name in ["RandomSizedCrop"]:
+            param_values = {
+                "p": 1.0,
+                "height": 10,
+                "width": 10,
+                "min_max_height": (50, 50),
+            }
         elif transform_name in ["Crop"]:
             param_values = {"p": 1.0, "x_max": 10, "y_max": 10}
         else:
