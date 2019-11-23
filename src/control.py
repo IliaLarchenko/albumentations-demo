@@ -63,13 +63,13 @@ def replace_none(string):
 
 def select_radio(param_name, options_list, **kwargs):
     st.sidebar.subheader(param_name)
-    result = st.sidebar.radio("", options_list)
+    result = st.sidebar.radio("", options_list, key=hash(param_name))
     return replace_none(result)
 
 
 def select_checkbox(param_name, defaults, **kwargs):
     st.sidebar.subheader(param_name)
-    result = st.sidebar.checkbox("True", defaults)
+    result = st.sidebar.checkbox("True", defaults, key=hash(param_name))
     return result
 
 

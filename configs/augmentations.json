@@ -175,8 +175,8 @@
         0.25
       ],
       "limits_list": [
-        0,
-        1.0
+        0.01,
+        0.99
       ],
       "param_name": [
         "scale_min",
@@ -294,20 +294,20 @@
     {
       "defaults": 5,
       "limits_list": [
-        0,
+        1,
         15
       ],
-      "param_name": "shift_limit",
+      "param_name": "num_steps",
       "type": "num_interval"
     },
     {
       "defaults": [
-        -2.0,
-        2.0
-      ],
-      "limits_list": [
         -0.3,
         0.3
+      ],
+      "limits_list": [
+        -2.0,
+        2.0
       ],
       "param_name": "distort_limit",
       "type": "num_interval"
@@ -469,20 +469,6 @@
       "type": "radio"
     }
   ],
-  "MedianBlur": [
-    {
-      "defaults": [
-        3,
-        7
-      ],
-      "limits_list": [
-        3,
-        100
-      ],
-      "param_name": "blur_limit",
-      "type": "num_interval"
-    }
-  ],
   "MotionBlur": [
     {
       "defaults": [
@@ -500,12 +486,12 @@
   "MultiplicativeNoise": [
     {
       "defaults": [
-        0.1,
-        5.0
-      ],
-      "limits_list": [
         0.9,
         1.1
+      ],
+      "limits_list": [
+        0.1,
+        5.0
       ],
       "param_name": "multiplier",
       "type": "num_interval"
@@ -706,8 +692,8 @@
       ],
       "param_name": "grid",
       "subparam_names": [
-        "height",
-        "width"
+        "vertical",
+        "horizontal"
       ],
       "type": "several_nums"
     }
@@ -773,7 +759,7 @@
         "None",
         "drizzle",
         "heavy",
-        "torrestial"
+        "torrential"
       ],
       "param_name": "rain_type",
       "type": "radio"
@@ -868,7 +854,10 @@
     {
       "param_name": "min_max_height",
       "placeholder": {
-        "defaults": "image_half_height",
+        "defaults": [
+          "image_half_height",
+          "image_height"
+        ],
         "limits_list": [
           1,
           "image_height"
@@ -902,7 +891,7 @@
       "defaults": 1.0,
       "limits_list": [
         0.1,
-        10.0
+        1.0
       ],
       "param_name": "w2h_ratio",
       "type": "num_interval"
@@ -1023,24 +1012,24 @@
   "ShiftScaleRotate": [
     {
       "defaults": [
-        -1.0,
-        1.0
-      ],
-      "limits_list": [
         -0.06,
         0.06
+      ],
+      "limits_list": [
+        -1.0,
+        1.0
       ],
       "param_name": "shift_limit",
       "type": "num_interval"
     },
     {
       "defaults": [
-        -2.0,
-        2.0
-      ],
-      "limits_list": [
         -0.1,
         0.1
+      ],
+      "limits_list": [
+        -2.0,
+        2.0
       ],
       "param_name": "scale_limit",
       "type": "num_interval"
