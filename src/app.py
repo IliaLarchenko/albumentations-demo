@@ -48,12 +48,8 @@ augmented_image = transform(image=image)["image"]
 width_original = 400
 width_transformed = int(width_original / image.shape[1] * augmented_image.shape[1])
 
-st.image(
-    image, caption="Original image", width=width_original,
-)
-st.image(
-    augmented_image, caption="Transformed image", width=width_transformed,
-)
+st.image(image, caption="Original image", width=width_original)
+st.image(augmented_image, caption="Transformed image", width=width_transformed)
 
 # print additional info
 st.code(str(transform))

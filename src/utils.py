@@ -10,7 +10,7 @@ def load_image(
     image_name: str, path_to_folder: str = "../images", bgr2rgb: bool = True
 ):
     path_to_image = os.path.join(path_to_folder, image_name)
-    image = cv2.imread(path_to_image,)
+    image = cv2.imread(path_to_image)
     if bgr2rgb:
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     return image
