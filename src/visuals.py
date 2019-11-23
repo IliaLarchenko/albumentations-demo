@@ -35,13 +35,22 @@ def show_credentials():
     st.markdown("* * *")
     st.subheader("Credentials:")
     st.markdown(
-        "Source: [github.com/IliaLarchenko/albumentations-demo](https://github.com/IliaLarchenko/albumentations-demo)"
+        (
+            "Source: [github.com/IliaLarchenko/albumentations-demo]"
+            "(https://github.com/IliaLarchenko/albumentations-demo)"
+        )
     )
     st.markdown(
-        "Albumentations library: [github.com/albumentations-team/albumentations](https://github.com/albumentations-team/albumentations)"
+        (
+            "Albumentations library: [github.com/albumentations-team/albumentations]"
+            "(https://github.com/albumentations-team/albumentations)"
+        )
     )
     st.markdown(
-        "Image Source: [pexels.com/royalty-free-images](https://pexels.com/royalty-free-images/)"
+        (
+            "Image Source: [pexels.com/royalty-free-images]"
+            "(https://pexels.com/royalty-free-images/)"
+        )
     )
 
 

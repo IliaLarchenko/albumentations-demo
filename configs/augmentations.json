@@ -1,266 +1,35 @@
 {
-  "ToGray": [],
-  "ToSepia": [],
-  "ChannelShuffle": [],
-  "InvertImg": [],
-  "VerticalFlip": [],
-  "HorizontalFlip": [],
-  "Flip": [],
-  "Transpose": [],
-  "RandomGridShuffle": [
-    {
-      "param_name": "grid",
-      "type": "several_ints",
-      "subparam_names": [
-        "height",
-        "width"
-      ],
-      "limits_list": [
-        [
-          1,
-          10
-        ],
-        [
-          1,
-          10
-        ]
-      ],
-      "defaults_list": [
-        3,
-        3
-      ]
-    }
-  ],
   "Blur": [
     {
-      "param_name": "blur_limit",
-      "type": "int_interval",
-      "limits_list": [
-        3,
-        100
-      ],
       "defaults": [
         3,
         7
-      ]
-    }
-  ],
-  "MotionBlur": [
-    {
+      ],
+      "limits_list": [
+        3,
+        100
+      ],
       "param_name": "blur_limit",
-      "type": "int_interval",
-      "limits_list": [
-        3,
-        100
-      ],
-      "defaults": [
-        3,
-        7
-      ]
-    }
-  ],
-  "MedianBlur": [
-    {
-      "param_name": "blur_limit",
-      "type": "int_interval",
-      "limits_list": [
-        3,
-        100
-      ],
-      "defaults": [
-        3,
-        7
-      ]
-    }
-  ],
-  "GaussNoise": [
-    {
-      "param_name": "var_limit",
-      "type": "int_interval",
-      "limits_list": [
-        0.0,
-        500.0
-      ],
-      "defaults": [
-        10.0,
-        50.0
-      ]
-    },
-    {
-      "param_name": "mean",
-      "type": "int_interval",
-      "limits_list": [
-        -100.0,
-        100.0
-      ],
-      "defaults": 0.0
-    }
-  ],
-  "RandomBrightness": [
-    {
-      "param_name": "limit",
-      "type": "int_interval",
-      "limits_list": [
-        -1.0,
-        1.0
-      ],
-      "defaults": [
-        -0.2,
-        0.2
-      ]
-    }
-  ],
-  "RandomContrast": [
-    {
-      "param_name": "limit",
-      "type": "int_interval",
-      "limits_list": [
-        -1.0,
-        1.0
-      ],
-      "defaults": [
-        -0.2,
-        0.2
-      ]
-    }
-  ],
-  "HueSaturationValue": [
-    {
-      "param_name": "hue_shift_limit",
-      "type": "int_interval",
-      "limits_list": [
-        -100,
-        100
-      ],
-      "defaults": [
-        -20,
-        20
-      ]
-    },
-    {
-      "param_name": "sat_shift_limit",
-      "type": "int_interval",
-      "limits_list": [
-        -100,
-        100
-      ],
-      "defaults": [
-        -30,
-        30
-      ]
-    },
-    {
-      "param_name": "val_shift_limit",
-      "type": "int_interval",
-      "limits_list": [
-        -100,
-        100
-      ],
-      "defaults": [
-        -20,
-        20
-      ]
-    }
-  ],
-  "RGBShift": [
-    {
-      "param_name": "r_shift_limit",
-      "type": "int_interval",
-      "limits_list": [
-        -255,
-        255
-      ],
-      "defaults": [
-        -20,
-        20
-      ]
-    },
-    {
-      "param_name": "g_shift_limit",
-      "type": "int_interval",
-      "limits_list": [
-        -255,
-        255
-      ],
-      "defaults": [
-        -20,
-        20
-      ]
-    },
-    {
-      "param_name": "b_shift_limit",
-      "type": "int_interval",
-      "limits_list": [
-        -255,
-        255
-      ],
-      "defaults": [
-        -20,
-        20
-      ]
-    }
-  ],
-  "JpegCompression": [
-    {
-      "param_name": [
-        "quality_lower",
-        "quality_upper"
-      ],
-      "type": "min_max",
-      "limits_list": [
-        0,
-        100
-      ],
-      "defaults_list": [
-        80,
-        100
-      ]
-    }
-  ],
-  "ImageCompression": [
-    {
-      "param_name": "compression_type",
-      "type": "radio",
-      "options_list": [
-        0,
-        1
-      ]
-    },
-    {
-      "param_name": [
-        "quality_lower",
-        "quality_upper"
-      ],
-      "type": "min_max",
-      "limits_list": [
-        0,
-        100
-      ],
-      "defaults_list": [
-        80,
-        100
-      ]
+      "type": "int_interval"
     }
   ],
   "CLAHE": [
     {
-      "param_name": "clip_limit",
-      "type": "int_interval",
+      "defaults": [
+        1,
+        4
+      ],
       "limits_list": [
         1,
         100
       ],
-      "defaults": [
-        1,
-        4
-      ]
+      "param_name": "clip_limit",
+      "type": "int_interval"
     },
     {
-      "param_name": "tile_grid_size",
-      "type": "several_ints",
-      "subparam_names": [
-        "height",
-        "width"
+      "defaults_list": [
+        8,
+        8
       ],
       "limits_list": [
         [
@@ -272,232 +41,462 @@
           100
         ]
       ],
-      "defaults_list": [
-        8,
-        8
-      ]
+      "param_name": "tile_grid_size",
+      "subparam_names": [
+        "height",
+        "width"
+      ],
+      "type": "several_ints"
+    }
+  ],
+  "CenterCrop": [
+    {
+      "param_name": "height",
+      "placeholder": {
+        "defaults": "image_half_height",
+        "limits_list": [
+          1,
+          "image_height"
+        ]
+      },
+      "type": "int_interval"
+    },
+    {
+      "param_name": "width",
+      "placeholder": {
+        "defaults": "image_half_width",
+        "limits_list": [
+          1,
+          "image_width"
+        ]
+      },
+      "type": "int_interval"
+    }
+  ],
+  "ChannelDropout": [
+    {
+      "defaults": [
+        1,
+        1
+      ],
+      "limits_list": [
+        1,
+        3
+      ],
+      "param_name": "channel_drop_range",
+      "type": "int_interval"
+    },
+    {
+      "defaults": 0,
+      "limits_list": [
+        0,
+        255
+      ],
+      "param_name": "fill_value",
+      "type": "int_interval"
+    }
+  ],
+  "ChannelShuffle": [],
+  "Crop": [
+    {
+      "min_diff": 1,
+      "param_name": [
+        "x_min",
+        "x_max"
+      ],
+      "placeholder": {
+        "defaults_list": [
+          0,
+          "image_half_width"
+        ],
+        "limits_list": [
+          0,
+          "image_width"
+        ]
+      },
+      "type": "min_max"
+    },
+    {
+      "min_diff": 1,
+      "param_name": [
+        "y_min",
+        "y_max"
+      ],
+      "placeholder": {
+        "defaults_list": [
+          0,
+          "image_half_height"
+        ],
+        "limits_list": [
+          0,
+          "image_height"
+        ]
+      },
+      "type": "min_max"
     }
   ],
   "Cutout": [
     {
+      "defaults": 8,
+      "limits_list": [
+        1,
+        100
+      ],
       "param_name": "num_holes",
-      "type": "int_interval",
+      "type": "int_interval"
+    },
+    {
+      "defaults": 8,
       "limits_list": [
         1,
         100
       ],
-      "defaults": 8
-    },
-    {
       "param_name": "max_h_size",
-      "type": "int_interval",
-      "limits_list": [
-        1,
-        100
-      ],
-      "defaults": 8
+      "type": "int_interval"
     },
     {
-      "param_name": "max_w_size",
-      "type": "int_interval",
+      "defaults": 8,
       "limits_list": [
         1,
         100
       ],
-      "defaults": 8
+      "param_name": "max_w_size",
+      "type": "int_interval"
     },
     {
       "param_name": "fill_value",
       "type": "rgb"
     }
   ],
-  "RandomSnow": [
+  "Equalize": [
     {
-      "param_name": [
-        "snow_point_lower",
-        "snow_point_upper"
+      "options_list": [
+        "cv",
+        "pil"
       ],
-      "type": "min_max",
+      "param_name": "mode",
+      "type": "radio"
+    },
+    {
+      "defaults": 1,
+      "param_name": "by_channels",
+      "type": "checkbox"
+    }
+  ],
+  "Flip": [],
+  "GaussNoise": [
+    {
+      "defaults": [
+        10.0,
+        50.0
+      ],
+      "limits_list": [
+        0.0,
+        500.0
+      ],
+      "param_name": "var_limit",
+      "type": "int_interval"
+    },
+    {
+      "defaults": 0.0,
+      "limits_list": [
+        -100.0,
+        100.0
+      ],
+      "param_name": "mean",
+      "type": "int_interval"
+    }
+  ],
+  "HorizontalFlip": [],
+  "HueSaturationValue": [
+    {
+      "defaults": [
+        -20,
+        20
+      ],
+      "limits_list": [
+        -100,
+        100
+      ],
+      "param_name": "hue_shift_limit",
+      "type": "int_interval"
+    },
+    {
+      "defaults": [
+        -30,
+        30
+      ],
+      "limits_list": [
+        -100,
+        100
+      ],
+      "param_name": "sat_shift_limit",
+      "type": "int_interval"
+    },
+    {
+      "defaults": [
+        -20,
+        20
+      ],
+      "limits_list": [
+        -100,
+        100
+      ],
+      "param_name": "val_shift_limit",
+      "type": "int_interval"
+    }
+  ],
+  "ImageCompression": [
+    {
+      "options_list": [
+        0,
+        1
+      ],
+      "param_name": "compression_type",
+      "type": "radio"
+    },
+    {
+      "defaults_list": [
+        80,
+        100
+      ],
+      "limits_list": [
+        0,
+        100
+      ],
+      "param_name": [
+        "quality_lower",
+        "quality_upper"
+      ],
+      "type": "min_max"
+    }
+  ],
+  "InvertImg": [],
+  "JpegCompression": [
+    {
+      "defaults_list": [
+        80,
+        100
+      ],
+      "limits_list": [
+        0,
+        100
+      ],
+      "param_name": [
+        "quality_lower",
+        "quality_upper"
+      ],
+      "type": "min_max"
+    }
+  ],
+  "MedianBlur": [
+    {
+      "defaults": [
+        3,
+        7
+      ],
+      "limits_list": [
+        3,
+        100
+      ],
+      "param_name": "blur_limit",
+      "type": "int_interval"
+    }
+  ],
+  "MotionBlur": [
+    {
+      "defaults": [
+        3,
+        7
+      ],
+      "limits_list": [
+        3,
+        100
+      ],
+      "param_name": "blur_limit",
+      "type": "int_interval"
+    }
+  ],
+  "RGBShift": [
+    {
+      "defaults": [
+        -20,
+        20
+      ],
+      "limits_list": [
+        -255,
+        255
+      ],
+      "param_name": "r_shift_limit",
+      "type": "int_interval"
+    },
+    {
+      "defaults": [
+        -20,
+        20
+      ],
+      "limits_list": [
+        -255,
+        255
+      ],
+      "param_name": "g_shift_limit",
+      "type": "int_interval"
+    },
+    {
+      "defaults": [
+        -20,
+        20
+      ],
+      "limits_list": [
+        -255,
+        255
+      ],
+      "param_name": "b_shift_limit",
+      "type": "int_interval"
+    }
+  ],
+  "RandomBrightness": [
+    {
+      "defaults": [
+        -0.2,
+        0.2
+      ],
+      "limits_list": [
+        -1.0,
+        1.0
+      ],
+      "param_name": "limit",
+      "type": "int_interval"
+    }
+  ],
+  "RandomContrast": [
+    {
+      "defaults": [
+        -0.2,
+        0.2
+      ],
+      "limits_list": [
+        -1.0,
+        1.0
+      ],
+      "param_name": "limit",
+      "type": "int_interval"
+    }
+  ],
+  "RandomFog": [
+    {
+      "defaults_list": [
+        0.1,
+        0.2
+      ],
       "limits_list": [
         0.0,
         1.0
       ],
-      "defaults_list": [
-        0.1,
-        0.2
-      ]
-    },
-    {
-      "param_name": "brightness_coeff",
-      "type": "int_interval",
-      "limits_list": [
-        0.0,
-        5.0
-      ],
-      "defaults": 2.5
-    }
-
-  ],
-  "RandomFog": [
-    {
       "param_name": [
         "fog_coef_lower",
         "fog_coef_upper"
       ],
-      "type": "min_max",
-      "limits_list": [
-        0.0,
-        1.0
-      ],
-      "defaults_list": [
-        0.1,
-        0.2
-      ]
+      "type": "min_max"
     },
     {
-      "param_name": "alpha_coef",
-      "type": "int_interval",
+      "defaults": 0.08,
       "limits_list": [
         0.0,
         1.0
       ],
-      "defaults": 0.08
+      "param_name": "alpha_coef",
+      "type": "int_interval"
     }
   ],
-  "ChannelDropout": [
+  "RandomGridShuffle": [
     {
-      "param_name": "channel_drop_range",
-      "type": "int_interval",
-      "limits_list": [
-        1,
+      "defaults_list": [
+        3,
         3
       ],
-      "defaults": [
-        1,
-        1
-      ]
-    },
-    {
-      "param_name": "fill_value",
-      "type": "int_interval",
       "limits_list": [
-        0,
-        255
-      ],
-      "defaults": 0
-    }
-  ],
-  "Solarize": [
-    {
-      "param_name": "threshold",
-      "type": "int_interval",
-      "limits_list": [
-        0,
-        255
-      ],
-      "defaults": 128
-    }
-  ],
-  "Equalize": [
-    {
-      "param_name": "mode",
-      "type": "radio",
-      "options_list": [
-        "cv",
-        "pil"
-      ]
-    },
-    {
-      "param_name": "by_channels",
-      "type": "checkbox",
-      "defaults": 1
-    }
-  ],
-  "CenterCrop": [
-    {
-      "param_name": "height",
-      "type": "int_interval",
-      "placeholder": {
-        "limits_list": [
+        [
           1,
-          "image_height"
+          10
         ],
-        "defaults": "image_half_height"
-      }
-    },
-    {
-      "param_name": "width",
-      "type": "int_interval",
-      "placeholder": {
-        "limits_list": [
+        [
           1,
-          "image_width"
-        ],
-        "defaults": "image_half_width"
-      }
-    }
-  ],
-  "Crop": [
-    {
-      "param_name": [
-        "x_min",
-        "x_max"
-      ],
-      "type": "min_max",
-      "placeholder": {
-        "limits_list": [
-          0,
-          "image_width"
-        ],
-        "defaults_list": [
-          0,
-          "image_half_width"
+          10
         ]
-      },
-      "min_diff": 1
-    },
-    {
-      "param_name": [
-        "y_min",
-        "y_max"
       ],
-      "type": "min_max",
-      "placeholder": {
-        "limits_list": [
-          0,
-          "image_height"
-        ],
-        "defaults_list": [
-          0,
-          "image_half_height"
-        ]
-      },
-      "min_diff": 1
+      "param_name": "grid",
+      "subparam_names": [
+        "height",
+        "width"
+      ],
+      "type": "several_ints"
     }
   ],
   "RandomScale": [
     {
-      "param_name": "scale_limit",
-      "type": "int_interval",
+      "defaults": [
+        -0.1,
+        0.1
+      ],
       "limits_list": [
         -0.9,
         2.0
       ],
-      "defaults": [
-        -0.1,
-        0.1
-      ]
+      "param_name": "scale_limit",
+      "type": "int_interval"
     },
     {
-      "param_name": "interpolation",
-      "type": "radio",
       "options_list": [
         0,
         1,
         2,
         3,
         4
-      ]
+      ],
+      "param_name": "interpolation",
+      "type": "radio"
     }
-  ]
+  ],
+  "RandomSnow": [
+    {
+      "defaults_list": [
+        0.1,
+        0.2
+      ],
+      "limits_list": [
+        0.0,
+        1.0
+      ],
+      "param_name": [
+        "snow_point_lower",
+        "snow_point_upper"
+      ],
+      "type": "min_max"
+    },
+    {
+      "defaults": 2.5,
+      "limits_list": [
+        0.0,
+        5.0
+      ],
+      "param_name": "brightness_coeff",
+      "type": "int_interval"
+    }
+  ],
+  "Solarize": [
+    {
+      "defaults": 128,
+      "limits_list": [
+        0,
+        255
+      ],
+      "param_name": "threshold",
+      "type": "int_interval"
+    }
+  ],
+  "ToGray": [],
+  "ToSepia": [],
+  "Transpose": [],
+  "VerticalFlip": []
 }
