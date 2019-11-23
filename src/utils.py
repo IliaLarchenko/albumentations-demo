@@ -6,6 +6,14 @@ import streamlit as st
 
 
 @st.cache
+def get_images_list(path_to_folder: str) -> list:
+    image_names_list = [
+        x for x in os.listdir(path_to_folder) if x[-3:] in ["jpg", "peg", "png"]
+    ]
+    return image_names_list
+
+
+@st.cache
 def load_image(
     image_name: str, path_to_folder: str = "../images", bgr2rgb: bool = True
 ):
@@ -17,11 +25,14 @@ def load_image(
 
 
 @st.cache
-def get_images_list(path_to_folder: str) -> list:
-    image_names_list = [
-        x for x in os.listdir(path_to_folder) if x[-3:] in ["jpg", "peg", "png"]
-    ]
-    return image_names_list
+def load_augmentations_config(
+    placeholder_params: dict, path_to_config: str = "configs/augmentations.json"
+) -> dict:
+    with open(path_to_config, "r") as config_file:
+        augmentations = json.load(config_file)
+    for name, params in augmentations.items():
+        params = [fill_placeholders(param, placeholder_params) for param in params]
+    return augmentations
 
 
 def fill_placeholders(params, placeholder_params):
@@ -43,17 +54,6 @@ def fill_placeholders(params, placeholder_params):
                     params[k] = v
         params.pop("placeholder")
     return params
-
-
-@st.cache
-def load_augmentations_config(
-    placeholder_params: dict, path_to_config: str = "configs/augmentations.json"
-) -> dict:
-    with open(path_to_config, "r") as config_file:
-        augmentations = json.load(config_file)
-    for name, params in augmentations.items():
-        params = [fill_placeholders(param, placeholder_params) for param in params]
-    return augmentations
 
 
 def get_params_string(param_values: dict) -> str:

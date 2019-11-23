@@ -39,10 +39,6 @@ param_values = show_transform_control(augmentations[transform_name])
 transform = getattr(A, transform_name)(**param_values)
 augmented_image = transform(image=image)["image"]
 
-# show the params passed
-# st.text("Params passed: ")
-# st.code(get_params_string(param_values))
-# st.text("Press R to update")
 
 # show the images
 width_original = 400
