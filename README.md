@@ -33,7 +33,7 @@ The interface is very simple and intuitive:
 3. Every time you change any parameter you will see the augmented version of the image on the right side of your screen.
 4. Below the images you can find a code for calling of the augmentation with selected parameters.
 5. You can also find there the original docstring for this transformation.
-![screenshot](docs/readme.jpg?raw=true)
+![screenshot](docs/screenshot.jpg?raw=true)
 
 
 ## Links
