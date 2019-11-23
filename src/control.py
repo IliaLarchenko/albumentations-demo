@@ -3,7 +3,7 @@ import streamlit as st
 # TODO: rename and refactor everything
 
 
-def select_int_interval(param_name: str, limits_list: list, defaults, **kwargs):
+def select_num_interval(param_name: str, limits_list: list, defaults, **kwargs):
     st.sidebar.subheader(param_name)
     min_max_interval = st.sidebar.slider(
         "", limits_list[0], limits_list[1], defaults, key=hash(param_name)
@@ -11,7 +11,7 @@ def select_int_interval(param_name: str, limits_list: list, defaults, **kwargs):
     return min_max_interval
 
 
-def select_several_ints(
+def select_several_nums(
     param_name, subparam_names, limits_list, defaults_list, **kwargs
 ):
     st.sidebar.subheader(param_name)
@@ -45,7 +45,7 @@ def select_min_max(param_name, limits_list, defaults_list, min_diff=0, **kwargs)
 
 
 def select_RGB(param_name, **kwargs):
-    result = select_several_ints(
+    result = select_several_nums(
         param_name,
         subparam_names=["Red", "Green", "Blue"],
         limits_list=[[0, 255], [0, 255], [0, 255]],
@@ -68,8 +68,8 @@ def select_checkbox(param_name, defaults, **kwargs):
 
 # dict from param name to function showing this param
 param2func = {
-    "int_interval": select_int_interval,
-    "several_ints": select_several_ints,
+    "num_interval": select_num_interval,
+    "several_nums": select_several_nums,
     "radio": select_radio,
     "rgb": select_RGB,
     "checkbox": select_checkbox,
