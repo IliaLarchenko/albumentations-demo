@@ -37,7 +37,15 @@ param_values = show_transform_control(augmentations[transform_name])
 
 # apply the transformation to the image
 transform = getattr(A, transform_name)(**param_values)
-augmented_image = transform(image=image)["image"]
+data = A.ReplayCompose([transform])(image=image)
+augmented_image = data["image"]
+
+# TODO add convinient replay compose
+# applied_params = data["replay"]["transforms"][0]['params']
+# for k,v in applied_params.items():
+#     applied_params[k] = str(v)
+# st.write(applied_params)
+# st.write(data["replay"])
 
 
 # show the images
