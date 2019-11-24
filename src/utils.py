@@ -9,9 +9,9 @@ import streamlit as st
 @st.cache
 def get_path_to_the_image():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--images_folder", default="images")
+    parser.add_argument("--image_folder", default="images")
     args = parser.parse_args()
-    return getattr(args, "images_folder")
+    return getattr(args, "image_folder")
 
 
 @st.cache

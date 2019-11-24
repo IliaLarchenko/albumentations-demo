@@ -18,7 +18,7 @@ streamlit run src/app.py
 
 If you want to work with you own images just replace the last line with:
 ```
-streamlit run src/app.py -- --images_folder PATH_TO_YOUR_IMAGE_FOLDER
+streamlit run src/app.py -- --image_folder PATH_TO_YOUR_IMAGE_FOLDER
 ```
 
 In your terminal you will see the link to the running local service similar to : 
