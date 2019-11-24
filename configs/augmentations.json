@@ -507,6 +507,58 @@
       "type": "checkbox"
     }
   ],
+  "OpticalDistortion": [
+    {
+      "defaults": [
+        -0.3,
+        0.3
+      ],
+      "limits_list": [
+        -2.0,
+        2.0
+      ],
+      "param_name": "distort_limit",
+      "type": "num_interval"
+    },
+    {
+      "defaults": [
+        -0.05,
+        0.05
+      ],
+      "limits_list": [
+        -1.0,
+        1.0
+      ],
+      "param_name": "shift_limit",
+      "type": "num_interval"
+    },
+    {
+      "options_list": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "param_name": "interpolation",
+      "type": "radio"
+    },
+    {
+      "options_list": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "param_name": "border_mode",
+      "type": "radio"
+    },
+    {
+      "param_name": "value",
+      "type": "rgb"
+    }
+  ],
   "Posterize": [
     {
       "defaults_list": [
@@ -1109,54 +1161,5 @@
   "ToGray": [],
   "ToSepia": [],
   "Transpose": [],
-  "VerticalFlip": [],
-
-
-  "OpticalDistortion": [
-    {
-      "defaults": [
-        -0.3,
-        0.3
-      ],
-      "limits_list": [
-        -2.0,
-        2.0
-      ],
-      "param_name": "distort_limit",
-      "type": "num_interval"
-    },    {
-      "defaults": [-0.05, 0.05],
-      "limits_list": [
-        -1.0,
-        1.0
-      ],
-      "param_name": "shift_limit",
-      "type": "num_interval"
-    },
-    {
-      "options_list": [
-        0,
-        1,
-        2,
-        3,
-        4
-      ],
-      "param_name": "interpolation",
-      "type": "radio"
-    },
-    {
-      "options_list": [
-        0,
-        1,
-        2,
-        3,
-        4
-      ],
-      "param_name": "border_mode",
-      "type": "radio"
-    },
-    {
-      "param_name": "value",
-      "type": "rgb"
-    }]
+  "VerticalFlip": []
 }

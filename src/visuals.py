@@ -1,3 +1,4 @@
+import cv2
 import streamlit as st
 
 from control import param2func
@@ -8,11 +9,17 @@ def show_logo():
     st.image(load_image("logo.png", "../images"), format="PNG")
 
 
-def select_image(path_to_images: str = "images"):
+def select_image(path_to_images: str):
     image_names_list = get_images_list(path_to_images)
-    image_name = st.sidebar.selectbox("Select an image:", image_names_list)
-    image = load_image(image_name, path_to_images)
-    return image
+    if len(image_names_list) < 1:
+        return 0, 0
+    else:
+        try:
+            image_name = st.sidebar.selectbox("Select an image:", image_names_list)
+            image = load_image(image_name, path_to_images)
+            return 1, image
+        except cv2.error:
+            return 0, 0
 
 
 def show_transform_control(transform_params: dict) -> dict:

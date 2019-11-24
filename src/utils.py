@@ -1,8 +1,17 @@
 import cv2
 import os
 import json
+import argparse
 
 import streamlit as st
+
+
+@st.cache
+def get_path_to_the_image():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--images_folder", default="images")
+    args = parser.parse_args()
+    return getattr(args, "images_folder")
 
 
 @st.cache
@@ -18,9 +27,7 @@ def get_images_list(path_to_folder: str) -> list:
 
 
 @st.cache
-def load_image(
-    image_name: str, path_to_folder: str = "../images", bgr2rgb: bool = True
-):
+def load_image(image_name: str, path_to_folder: str, bgr2rgb: bool = True):
     """Load the image
     Args:
         image_name (str): name of the image
