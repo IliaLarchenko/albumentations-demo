@@ -8,6 +8,7 @@ import streamlit as st
 
 @st.cache
 def get_arguments():
+    """Return the values of CLI params"""
     parser = argparse.ArgumentParser()
     parser.add_argument("--image_folder", default="images")
     parser.add_argument("--image_width", default=400, type=int)
