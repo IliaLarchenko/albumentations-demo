@@ -7,11 +7,12 @@ import streamlit as st
 
 
 @st.cache
-def get_path_to_the_image():
+def get_arguments():
     parser = argparse.ArgumentParser()
     parser.add_argument("--image_folder", default="images")
+    parser.add_argument("--image_width", default=400, type=int)
     args = parser.parse_args()
-    return getattr(args, "image_folder")
+    return getattr(args, "image_folder"), getattr(args, "image_width")
 
 
 @st.cache

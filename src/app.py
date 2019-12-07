@@ -3,7 +3,7 @@ import streamlit as st
 import albumentations as A
 
 
-from utils import load_augmentations_config, get_path_to_the_image
+from utils import load_augmentations_config, get_arguments
 from visuals import (
     show_transform_control,
     select_image,
@@ -11,19 +11,18 @@ from visuals import (
     show_docstring,
 )
 
-# get the path to images
-path_to_images = get_path_to_the_image()
+# get CLI params: the path to images and image width
+path_to_images, width_original = get_arguments()
 if not os.path.isdir(path_to_images):
     st.title("There is no directory: " + path_to_images)
 else:
+    # select image
     status, image = select_image(path_to_images)
     if status == 0:
         st.title("Can't load image from: " + path_to_images)
     else:
         # show title
         st.title("Demo of Albumentations")
-
-        # select image
 
         placeholder_params = {
             "image_width": image.shape[1],
@@ -58,7 +57,6 @@ else:
         # st.write(data["replay"])
 
         # show the images
-        width_original = 400
         width_transformed = int(
             width_original / image.shape[1] * augmented_image.shape[1]
         )
