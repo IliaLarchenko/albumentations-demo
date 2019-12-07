@@ -21,6 +21,12 @@ If you want to work with you own images just replace the last line with:
 streamlit run src/app.py -- --image_folder PATH_TO_YOUR_IMAGE_FOLDER
 ```
 
+If your images have some unusual proportions you can use `image_width` parameter to set the width in pixels of the original image to show. The width of the transformed image and heights of both images will be computed automatically. Default value of width is `400`.
+```
+streamlit run src/app.py -- --image_width INT_VALUE_OF_WIDTH
+```
+
+
 In your terminal you will see the link to the running local service similar to : 
 ```console
   You can now view your Streamlit app in your browser.
