@@ -1,6 +1,7 @@
 # albumentations-demo
 
 This service is created to demonstrate abilities of the [Albumentations](https://github.com/albumentations-team/albumentations) - a library for efficient image augmentations.
+Link to my [article about augmentations selection and why this service can be useful](https://towardsdatascience.com/explore-image-augmentations-using-a-convenient-tool-a199b4ac8214)
 
 ## Easy start
 You can play with this service right now [https://albumentations-demo.herokuapp.com/](https://albumentations-demo.herokuapp.com/)
