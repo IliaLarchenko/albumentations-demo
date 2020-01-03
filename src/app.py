@@ -2,6 +2,7 @@ import os
 import streamlit as st
 import albumentations as A
 
+# TODO: refactor all the new code of professional mode
 
 from utils import load_augmentations_config, get_arguments
 from visuals import (

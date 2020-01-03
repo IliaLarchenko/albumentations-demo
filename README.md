@@ -39,13 +39,21 @@ Just follow the local link to use the service.
 ## How to use
 
 The interface is very simple and intuitive:
-1. On the left you have a control sidebar. You can choose the image and the transformation.
+1. On the left you have a control sidebar. Select the "Simple" mode. You can choose the image and the transformation.
 2. After that you will see the control elements for the every parameter this transformation has.
 3. Every time you change any parameter you will see the augmented version of the image on the right side of your screen.
 4. Below the images you can find a code for calling of the augmentation with selected parameters.
 5. You can also find there the original docstring for this transformation.
 ![screenshot](docs/screenshot.jpg?raw=true)
 
+
+## Professional mode
+In the professional mode you can:
+1. Upload your own image
+2. Combine multiple transformations
+3. See the random parameters used to get the result
+
+Be aware that in Professional mode some combination of parameters of different transformations can be invalid. You should control it.
 
 ## Links
 * Albumentations library: [github.com/albumentations-team/albumentations](https://github.com/albumentations-team/albumentations)
