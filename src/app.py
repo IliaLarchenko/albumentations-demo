@@ -16,6 +16,10 @@ path_to_images, width_original = get_arguments()
 if not os.path.isdir(path_to_images):
     st.title("There is no directory: " + path_to_images)
 else:
+    # select interface type
+    interface_type = st.sidebar.radio('Select the interface type',
+                                      ['Simple', 'Professional'])
+
     # select image
     status, image = select_image(path_to_images)
     if status == 0:
@@ -37,16 +41,34 @@ else:
         )
 
         # select a transformation
-        transform_name = st.sidebar.selectbox(
-            "Select a transformation:", sorted(list(augmentations.keys()))
-        )
+        if interface_type == 'Simple':
+            transform_names = [st.sidebar.selectbox(
+                "Select a transformation:", sorted(list(augmentations.keys()))
+            )]
+        # in the professional mode you can choose several transforms
+        elif interface_type == 'Professional':
+            transform_names = [st.sidebar.selectbox(
+                "Select transformation №1:", sorted(list(augmentations.keys()))
+            )]
+            while transform_names[-1] != 'None':
+                transform_names.append(st.sidebar.selectbox(
+                    f"Select transformation №{len(transform_names) + 1}:",
+                    ['None'] + sorted(list(augmentations.keys()))
+            ))
+            transform_names = transform_names[:-1]
 
-        # select the params values
-        param_values = show_transform_control(augmentations[transform_name])
+        original_image = image.copy()
+        transforms = []
+        for transform_name in transform_names:
 
-        # apply the transformation to the image
-        transform = getattr(A, transform_name)(**param_values)
-        data = A.ReplayCompose([transform])(image=image)
+            # select the params values
+            st.sidebar.subheader("Params of the : " + transform_name)
+            param_values = show_transform_control(augmentations[transform_name])
+
+            # apply the transformation to the image
+            transforms.append(getattr(A, transform_name)(**param_values))
+
+        data = A.ReplayCompose(transforms)(image=image)
         augmented_image = data["image"]
 
         # TODO add convinient replay compose
@@ -65,6 +87,7 @@ else:
         st.image(augmented_image, caption="Transformed image", width=width_transformed)
 
         # print additional info
-        st.code(str(transform))
-        show_docstring(transform)
+        for transform in transforms:
+            st.code(str(transform))
+            show_docstring(transform)
         show_credentials()
