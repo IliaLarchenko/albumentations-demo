@@ -109,3 +109,50 @@ def get_params_string(param_values: dict) -> str:
         [k + "=" + str(param_values[k]) for k in param_values.keys()]
     )
     return params_string
+
+
+def get_placeholder_params(image):
+    return {
+        "image_width": image.shape[1],
+        "image_height": image.shape[0],
+        "image_half_width": int(image.shape[1] / 2),
+        "image_half_height": int(image.shape[0] / 2),
+    }
+
+
+def select_transformations(augmentations: dict, interface_type: str) -> list:
+    # in the Simple mode you can choose only one transform
+    if interface_type == "Simple":
+        transform_names = [
+            st.sidebar.selectbox(
+                "Select a transformation:", sorted(list(augmentations.keys()))
+            )
+        ]
+    # in the professional mode you can choose several transforms
+    elif interface_type == "Professional":
+        transform_names = [
+            st.sidebar.selectbox(
+                "Select transformation №1:", sorted(list(augmentations.keys()))
+            )
+        ]
+        while transform_names[-1] != "None":
+            transform_names.append(
+                st.sidebar.selectbox(
+                    f"Select transformation №{len(transform_names) + 1}:",
+                    ["None"] + sorted(list(augmentations.keys())),
+                )
+            )
+        transform_names = transform_names[:-1]
+    return transform_names
+
+
+def show_random_params(data: dict, interface_type: str = "Professional"):
+    """Shows random params used for transformation (from A.ReplayCompose)"""
+    if interface_type == "Professional":
+        st.subheader("Random params used")
+        random_values = {}
+        for applied_params in data["replay"]["transforms"]:
+            random_values[
+                applied_params["__class_fullname__"].split(".")[-1]
+            ] = applied_params["params"]
+        st.write(random_values)

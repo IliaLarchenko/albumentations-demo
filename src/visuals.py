@@ -1,6 +1,8 @@
 import cv2
 import streamlit as st
 
+import albumentations as A
+
 from control import param2func
 from utils import get_images_list, load_image, upload_image
 
@@ -35,7 +37,7 @@ def select_image(path_to_images: str, interface_type: str = "Simple"):
         if image_name != "Upload my image":
             try:
                 image = load_image(image_name, path_to_images)
-                return 1, image
+                return 0, image
             except cv2.error:
                 return 1, 0
         else:
@@ -87,6 +89,16 @@ def show_credentials():
             "(https://pexels.com/royalty-free-images/)"
         )
     )
+
+
+def get_transormations_params(transform_names: list, augmentations: dict) -> list:
+    transforms = []
+    for i, transform_name in enumerate(transform_names):
+        # select the params values
+        st.sidebar.subheader("Params of the " + transform_name)
+        param_values = show_transform_control(augmentations[transform_name], i)
+        transforms.append(getattr(A, transform_name)(**param_values))
+    return transforms
 
 
 def show_docstring(obj_with_ds):
