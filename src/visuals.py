@@ -10,9 +10,20 @@ def show_logo():
 
 
 def select_image(path_to_images: str, interface_type: str = "Simple"):
+    """ Show interface to choose the image, and load it
+    Args:
+        path_to_images (dict): path ot folder with images
+        interface_type (dict): mode of the interface used
+    Returns:
+        (status, image)
+        status (int):
+            0 - if everything is ok
+            1 - if there is error during loading of image file
+            2 - if user hasn't uploaded photo yet
+    """
     image_names_list = get_images_list(path_to_images)
     if len(image_names_list) < 1:
-        return 0, 0
+        return 1, 0
     else:
         if interface_type == "Professional":
             image_name = st.sidebar.selectbox(
@@ -26,13 +37,13 @@ def select_image(path_to_images: str, interface_type: str = "Simple"):
                 image = load_image(image_name, path_to_images)
                 return 1, image
             except cv2.error:
-                return 0, 0
+                return 1, 0
         else:
             try:
                 image = upload_image()
-                return 1, image
+                return 0, image
             except cv2.error:
-                return 0, 0
+                return 1, 0
             except AttributeError:
                 return 2, 0
 
