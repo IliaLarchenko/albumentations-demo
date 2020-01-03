@@ -49,11 +49,14 @@ def upload_image(bgr2rgb: bool = True):
     Args:
         bgr2rgb (bool): converts BGR image to RGB if True
     """
-    file = st.sidebar.file_uploader("Upload your image (jpg, jpeg, or png)", ["jpg", "jpeg", "png"])
+    file = st.sidebar.file_uploader(
+        "Upload your image (jpg, jpeg, or png)", ["jpg", "jpeg", "png"]
+    )
     image = cv2.imdecode(np.fromstring(file.read(), np.uint8), 1)
     if bgr2rgb:
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     return image
+
 
 @st.cache
 def load_augmentations_config(

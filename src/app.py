@@ -17,8 +17,9 @@ if not os.path.isdir(path_to_images):
     st.title("There is no directory: " + path_to_images)
 else:
     # select interface type
-    interface_type = st.sidebar.radio('Select the interface type',
-                                      ['Simple', 'Professional'])
+    interface_type = st.sidebar.radio(
+        "Select the interface type", ["Simple", "Professional"]
+    )
 
     # select image
     status, image = select_image(path_to_images, interface_type)
@@ -40,20 +41,26 @@ else:
         )
 
         # select a transformation
-        if interface_type == 'Simple':
-            transform_names = [st.sidebar.selectbox(
-                "Select a transformation:", sorted(list(augmentations.keys()))
-            )]
+        if interface_type == "Simple":
+            transform_names = [
+                st.sidebar.selectbox(
+                    "Select a transformation:", sorted(list(augmentations.keys()))
+                )
+            ]
         # in the professional mode you can choose several transforms
-        elif interface_type == 'Professional':
-            transform_names = [st.sidebar.selectbox(
-                "Select transformation №1:", sorted(list(augmentations.keys()))
-            )]
-            while transform_names[-1] != 'None':
-                transform_names.append(st.sidebar.selectbox(
-                    f"Select transformation №{len(transform_names) + 1}:",
-                    ['None'] + sorted(list(augmentations.keys()))
-            ))
+        elif interface_type == "Professional":
+            transform_names = [
+                st.sidebar.selectbox(
+                    "Select transformation №1:", sorted(list(augmentations.keys()))
+                )
+            ]
+            while transform_names[-1] != "None":
+                transform_names.append(
+                    st.sidebar.selectbox(
+                        f"Select transformation №{len(transform_names) + 1}:",
+                        ["None"] + sorted(list(augmentations.keys())),
+                    )
+                )
             transform_names = transform_names[:-1]
 
         transforms = []
@@ -69,8 +76,10 @@ else:
             error = 0
         except ValueError:
             error = 1
-            st.title("The error has occurred. Most probably you have passed wrong set of parameters. \
-            Check transforms that change the shape of image.")
+            st.title(
+                "The error has occurred. Most probably you have passed wrong set of parameters. \
+            Check transforms that change the shape of image."
+            )
 
         if error == 0:
             augmented_image = data["image"]
@@ -83,14 +92,18 @@ else:
             )
 
             st.image(image, caption="Original image", width=width_original)
-            st.image(augmented_image, caption="Transformed image", width=width_transformed)
+            st.image(
+                augmented_image, caption="Transformed image", width=width_transformed
+            )
 
             # random values used to get transformations
-            if interface_type == 'Professional':
+            if interface_type == "Professional":
                 st.subheader("Random params used")
                 random_values = {}
                 for applied_params in data["replay"]["transforms"]:
-                    random_values[applied_params['__class_fullname__'].split('.')[-1]] = applied_params['params']
+                    random_values[
+                        applied_params["__class_fullname__"].split(".")[-1]
+                    ] = applied_params["params"]
                 st.write(random_values)
 
             # print additional info
