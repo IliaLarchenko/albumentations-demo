@@ -2,8 +2,6 @@ import os
 import streamlit as st
 import albumentations as A
 
-# TODO: refactor all the new code of professional mode
-
 from utils import load_augmentations_config, get_arguments
 from visuals import (
     show_transform_control,
@@ -12,6 +10,8 @@ from visuals import (
     show_docstring,
 )
 
+# TODO: refactor all the new code of professional mode
+
 # get CLI params: the path to images and image width
 path_to_images, width_original = get_arguments()
 if not os.path.isdir(path_to_images):
@@ -19,7 +19,7 @@ if not os.path.isdir(path_to_images):
 else:
     # select interface type
     interface_type = st.sidebar.radio(
-        "Select the interface type", ["Simple", "Professional"]
+        "Select the interface mode", ["Simple", "Professional"]
     )
 
     # select image
