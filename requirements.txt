@@ -61,7 +61,7 @@ s3transfer==0.2.1
 scikit-image==0.16.2
 scipy==1.3.2
 six==1.13.0
-streamlit==0.50.2
+streamlit==0.52.2
 toml==0.10.0
 toolz==0.10.0
 tornado==5.1.1
