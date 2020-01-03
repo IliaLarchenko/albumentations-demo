@@ -97,6 +97,60 @@
     }
   ],
   "ChannelShuffle": [],
+  "CoarseDropout": [
+    {
+      "defaults_list": [
+        8,
+        8
+      ],
+      "limits_list": [
+        1,
+        100
+      ],
+      "min_diff": 0,
+      "param_name": [
+        "min_holes",
+        "max_holes"
+      ],
+      "type": "min_max"
+    },
+    {
+      "defaults_list": [
+        8,
+        8
+      ],
+      "limits_list": [
+        1,
+        100
+      ],
+      "min_diff": 0,
+      "param_name": [
+        "min_height",
+        "max_height"
+      ],
+      "type": "min_max"
+    },
+    {
+      "defaults_list": [
+        8,
+        8
+      ],
+      "limits_list": [
+        1,
+        100
+      ],
+      "min_diff": 0,
+      "param_name": [
+        "min_width",
+        "max_width"
+      ],
+      "type": "min_max"
+    },
+    {
+      "param_name": "fill_value",
+      "type": "rgb"
+    }
+  ],
   "Crop": [
     {
       "min_diff": 1,
