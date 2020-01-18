@@ -9,7 +9,7 @@ You can play with this service right now [https://albumentations-demo.herokuapp.
 
 If you would like to run it locally follow the installation instruction.
 
-## Installation
+## Installation and run
 ```
 git clone https://github.com/IliaLarchenko/albumentations-demo
 cd albumentations-demo
@@ -36,6 +36,13 @@ In your terminal you will see the link to the running local service similar to :
   External URL: http://YOUR_GLOBAL_IP:8501
 ```
 Just follow the local link to use the service.
+
+## Run in docker
+You can run the service in docker:
+```
+docker-compose up
+```
+It will be available at http://DOCKER_HOST_IP:8501
 
 ## How to use
 
