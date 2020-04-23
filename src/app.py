@@ -79,6 +79,9 @@ def main():
                     width=width_transformed,
                 )
 
+                # comment about refreshing
+                st.write("*Press 'R' to refresh*")
+
                 # random values used to get transformations
                 show_random_params(data, interface_type)
 
