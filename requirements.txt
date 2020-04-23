@@ -41,7 +41,7 @@ packaging==19.2
 pandas==0.25.3
 pathspec==0.6.0
 pathtools==0.1.2
-Pillow==6.2.1
+Pillow==6.2.2
 pluggy==0.13.1
 pre-commit==1.20.0
 protobuf==3.10.0
