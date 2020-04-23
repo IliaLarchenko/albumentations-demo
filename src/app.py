@@ -97,9 +97,11 @@ def main():
                     st.image(os.environ["GA"])
                     st.markdown(
                         (
-                            "[Privacy policy]"(
-                                "(https://raw.githubusercontent.com/IliaLarchenko/albumentations-demo/"
-                                + "deploy/docs/privacy.html)"
+                            "[Privacy policy]"
+                            + (
+                                "(https://htmlpreview.github.io/?"
+                                + "https://github.com/IliaLarchenko/"
+                                + "albumentations-demo/blob/deploy/docs/privacy.html)"
                             )
                         )
                     )
