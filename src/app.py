@@ -93,13 +93,14 @@ def main():
 
                 # adding google analytics pixel
                 # only when deployed online. don't collect statistics of local usage
-                if 'GA' in os.environ:
-                    st.image(os.environ['GA'])
+                if "GA" in os.environ:
+                    st.image(os.environ["GA"])
                     st.markdown(
                         (
-                            "[Privacy policy]"
-                            ("(https://raw.githubusercontent.com/IliaLarchenko/albumentations-demo/" +
-                            "deploy/docs/privacy.html)")
+                            "[Privacy policy]"(
+                                "(https://raw.githubusercontent.com/IliaLarchenko/albumentations-demo/"
+                                + "deploy/docs/privacy.html)"
+                            )
                         )
                     )
 
