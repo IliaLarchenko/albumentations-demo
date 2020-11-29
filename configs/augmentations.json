@@ -81,7 +81,7 @@
       ],
       "limits_list": [
         1,
-        3
+        2
       ],
       "param_name": "channel_drop_range",
       "type": "num_interval"
