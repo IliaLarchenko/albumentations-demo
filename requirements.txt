@@ -36,7 +36,7 @@ mccabe==0.6.1
 more-itertools==7.2.0
 networkx==2.4
 nodeenv==1.3.3
-numpy==1.16.4
+numpy==1.22.0
 packaging==19.2
 pandas==0.25.3
 pathspec==0.6.0
