@@ -18,6 +18,11 @@ from visuals import (
 
 
 def main():
+    st.write("This online instance of the app will be discontinued after 18th of March 2024.")
+    st.write("You can still use it locally of deploy your own instance. See the [source code](https://github.com/IliaLarchenko/albumentations-demo).")
+    st.write("Or use the fork supported and deployed by albumentations team: [https://demo.albumentations.ai/](https://demo.albumentations.ai/).")
+
+
     # get CLI params: the path to images and image width
     path_to_images, width_original = get_arguments()
 
@@ -60,7 +65,7 @@ def main():
                     "The error has occurred. Most probably you have passed wrong set of parameters. \
                 Check transforms that change the shape of image."
                 )
-
+            
             # proceed only if everything is ok
             if error == 0:
                 augmented_image = data["image"]

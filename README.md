@@ -4,10 +4,13 @@ This service is created to demonstrate abilities of the [Albumentations](https:/
 [Link to my article about augmentations selection and why this service can be useful](https://towardsdatascience.com/explore-image-augmentations-using-a-convenient-tool-a199b4ac8214)
 
 ## Easy start
-You can play with this service right now [https://albumentations-demo.herokuapp.com/](https://albumentations-demo.herokuapp.com/)
-(It is deployed on free service with very limited computing power and can be quite unstable)
+If you would like to run the service locally follow the installation instruction.
 
-If you would like to run it locally follow the installation instruction.
+You can find the online version of this tool here: [https://albumentations-demo.herokuapp.com/](https://albumentations-demo.herokuapp.com/) But it will be discontinued after 18th of March 2024.
+
+As alternative you can also use the fork supported and deployed by the Albumentations team [https://demo.albumentations.ai/](https://demo.albumentations.ai/)
+
+
 
 ## Installation and run
 ```
