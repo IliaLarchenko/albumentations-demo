@@ -6,11 +6,9 @@ This service is created to demonstrate abilities of the [Albumentations](https:/
 ## Easy start
 If you would like to run the service locally follow the installation instruction.
 
-You can find the online version of this tool here: [https://albumentations-demo.herokuapp.com/](https://albumentations-demo.herokuapp.com/) But it will be discontinued after 18th of March 2024.
+You can find the online version of this tool here: [https://albumentations-demo.herokuapp.com/](https://albumentations-demo.herokuapp.com/) but I don't actively support it anymore.
 
-As alternative you can also use the fork supported and deployed by the Albumentations team [https://demo.albumentations.ai/](https://demo.albumentations.ai/)
-
-
+As alternative you can use the fork supported and deployed by the Albumentations team [https://demo.albumentations.ai/](https://demo.albumentations.ai/)
 
 ## Installation and run
 ```
