@@ -92,10 +92,8 @@ def main():
                     st.code(str(transform))
                 show_credentials()
 
-                # adding google analytics pixel
-                # only when deployed online. don't collect statistics of local usage
+                # adding generic privacy policy
                 if "GA" in os.environ:
-                    st.image(os.environ["GA"])
                     st.markdown(
                         (
                             "[Privacy policy]"
