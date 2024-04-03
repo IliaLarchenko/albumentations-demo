@@ -4,9 +4,13 @@ This service is created to demonstrate abilities of the [Albumentations](https:/
 [Link to my article about augmentations selection and why this service can be useful](https://towardsdatascience.com/explore-image-augmentations-using-a-convenient-tool-a199b4ac8214)
 
 ## Easy start
+I don't actively support this tool anymore but you can run it locally or use one of the deployed instances. 
+
 If you would like to run the service locally follow the installation instruction.
 
-You can find the online version of this tool here: [https://albumentations-demo.herokuapp.com/](https://albumentations-demo.herokuapp.com/) but I don't actively support it anymore.
+You can find the online version of this tool here: [https://albumentations-demo.herokuapp.com/](https://albumentations-demo.herokuapp.com/) (it will be stopped soon).
+
+It is also deployed as a Hugging Face space: [https://huggingface.co/spaces/ilarchenko/albumentations-demo](https://huggingface.co/spaces/ilarchenko/albumentations-demo)
 
 As alternative you can use the fork supported and deployed by the Albumentations team [https://demo.albumentations.ai/](https://demo.albumentations.ai/)
 
