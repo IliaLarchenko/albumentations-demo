@@ -1,18 +1,31 @@
+---
+title: Albumentations Demo
+emoji: 🏢
+colorFrom: blue
+colorTo: pink
+sdk: streamlit
+sdk_version: 1.22.0
+app_file: "src/app.py"
+pinned: true
+license: mit
+short_description: "Optimize image augmentations with Albumentations"
+tags: ["Computer Vision", "Image Augmentation", "Albumentations", "Streamlit", "Image Processing", "CV", "Image", "Augmentation"]
+---
+
+Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
+
 # albumentations-demo
 
 This service is created to demonstrate abilities of the [Albumentations](https://github.com/albumentations-team/albumentations) - a library for efficient image augmentations.
+
 [Link to my article about augmentations selection and why this service can be useful](https://towardsdatascience.com/explore-image-augmentations-using-a-convenient-tool-a199b4ac8214)
 
+Project repository: [github.com/IliaLarchenko/albumentations-demo](https://github.com/IliaLarchenko/albumentations-demo)
+
+Online demo: [huggingface.co/spaces/IliaLarchenko/albumentations-demo](https://huggingface.co/spaces/IliaLarchenko/albumentations-demo)
+
 ## Easy start
-I don't actively support this tool anymore but you can run it locally or use one of the deployed instances. 
-
 If you would like to run the service locally follow the installation instruction.
-
-You can find the online version of this tool here: [https://albumentations-demo.herokuapp.com/](https://albumentations-demo.herokuapp.com/) (it will be stopped soon).
-
-It is also deployed as a Hugging Face space: [https://huggingface.co/spaces/ilarchenko/albumentations-demo](https://huggingface.co/spaces/ilarchenko/albumentations-demo)
-
-As alternative you can use the fork supported and deployed by the Albumentations team [https://demo.albumentations.ai/](https://demo.albumentations.ai/)
 
 ## Installation and run
 ```

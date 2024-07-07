@@ -68,9 +68,6 @@ def main():
                 # show title
                 st.title("Demo of Albumentations")
 
-                st.write("I have deployed this service as a Hugging Face Space: https://huggingface.co/spaces/ilarchenko/albumentations-demo please, check it out!")
-                st.write("The version deployed here on Heroku will be deprecated soon.")
-
                 # show the images
                 width_transformed = int(
                     width_original / image.shape[1] * augmented_image.shape[1]

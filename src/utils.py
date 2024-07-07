@@ -7,7 +7,7 @@ import argparse
 import streamlit as st
 
 
-@st.cache
+@st.cache_data
 def get_arguments():
     """Return the values of CLI params"""
     parser = argparse.ArgumentParser()
@@ -17,7 +17,7 @@ def get_arguments():
     return getattr(args, "image_folder"), getattr(args, "image_width")
 
 
-@st.cache
+@st.cache_data
 def get_images_list(path_to_folder: str) -> list:
     """Return the list of images from folder
     Args:
@@ -29,7 +29,7 @@ def get_images_list(path_to_folder: str) -> list:
     return image_names_list
 
 
-@st.cache
+@st.cache_data
 def load_image(image_name: str, path_to_folder: str, bgr2rgb: bool = True):
     """Load the image
     Args:
@@ -58,7 +58,7 @@ def upload_image(bgr2rgb: bool = True):
     return image
 
 
-@st.cache
+@st.cache_data
 def load_augmentations_config(
     placeholder_params: dict, path_to_config: str = "configs/augmentations.json"
 ) -> dict:
