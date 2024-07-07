@@ -5,6 +5,7 @@ colorFrom: blue
 colorTo: pink
 sdk: streamlit
 sdk_version: 1.22.0
+python_version: 3.7
 app_file: "src/app.py"
 pinned: true
 license: mit
