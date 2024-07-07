@@ -1,3 +1,4 @@
 albumentations==0.4.3
 altair==4.0
 streamlit==1.22.0
+numpy==1.21.6
